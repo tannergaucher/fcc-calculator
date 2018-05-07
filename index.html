@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>fcc javascript calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,7 +17,7 @@
     <div id="calculator">
       <div id="equation"></div>
 
-      <input class="form-control" id="screen" type="text" value="" readonly>
+      <input class="form-control" id="screen" type="text" value="0" readonly>
 
       <button type="button" id="(" class="btn btn-outline-dark btn-lg">(</button>
       <button type="button" id=")" class="btn btn-outline-dark btn-lg">)</button>
@@ -38,15 +39,16 @@
       <button type="button" id="3" class="btn btn-outline-dark btn-lg">3</button>
       <button type="button" id="-" name="−" class="btn btn-outline-dark btn-lg">−</button>
 
-      <button type="button" id="zero" class="btn btn-outline-dark btn-lg">0</button>
+      <button type="button" id="0" class="btn btn-outline-dark btn-lg zero">0</button>
       <button type="button" id="." class="btn btn-outline-dark btn-lg">.</button>
-      <button type="button" id="=" class="btn btn-outline-dark btn-lg">=</button>
+      <button type="button" id="=" class="btn btn-outline-dark btn-lg equal">=</button>
       <button type="button" id="+" name="+" class="btn btn-outline-dark btn-lg">+</button>
     </div>
+    <div class="credit">
+      <h6>By<a href="https://github.com/tannergaucher" target="_blank"> Tanner</a></h6>
+    </div>
   </div>
-  <div class="credit">
-    <h6>By<a href="https://github.com/tannergaucher" target="_blank"> Tanner</a></h6>
-  </div>
+
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>

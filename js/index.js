@@ -30,10 +30,6 @@ function keyPress() {
       calculate();
     } else if (key === "=") {
       calculate();
-    } else if (key === "x") {
-      console.log("add a *");
-    } else if (key === "/") {
-      console.log("add a /");
     } else {
       var isButton = function(key) {
         let areButtons = /[0-9+-÷×]/;
@@ -55,13 +51,32 @@ function displayEquation() {
 function calculate() {
   displayEquation();
   let rawInput = screen.value;
+  //handle special chars 
   let raw1 = rawInput.replace(/×/, "*");
   let raw2 = raw1.replace(/÷/, "/");
+  //check for type number before eval 
   let answer = eval(raw2);
-  screen.value = answer;
+
+  //handle decimal places
+  let strNum = answer.toString();
+  let split = strNum.split(".");
+
+  if (split.length === 1) {
+    screen.value = answer;
+  } else if (split.length > 1 && split[1].length < 5) {
+    screen.value = answer;
+  } else if (split[1].length >= 5) {
+    //limit to 5 places
+    let rounded = precision(answer);
+    screen.value = rounded;
+  }
 }
 
 function clear() {
   screen.value = null;
   equationDiv.innerHTML = "";
+}
+
+function precision(num) {
+  return Number.parseFloat(num).toPrecision(12);
 }
